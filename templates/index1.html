@@ -1,0 +1,427 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    body {
+      font-family: Arial;
+      color: white;
+    }
+    
+    .split{
+      height: 100%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      overflow-x: hidden;
+      padding-top: 0px;
+    }
+    
+    .left {
+      left: 0;
+      width: 20%;
+      background-color: #111;
+    }
+    
+    .right {
+      right: 0;
+      width: 80%;
+      background-color: whitesmoke;
+    }
+    
+    .top {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .left img {
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      object-fit: cover;
+      padding-top: 20px;
+
+    }
+      .banner {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        background-color: black;
+        width: 100%;
+        ;
+      }
+
+      img{
+        width: 20%;
+        height: 20%;
+      }
+      .container-fluid{
+        position: absolute;
+        width: 100%; 
+        margin-top: 25px;
+        margin-bottom: 50px;
+      }
+    
+    
+      /* Make the image fully responsive */
+      .carousel-inner img {
+        width: 100%;
+      }
+
+      .bottom {
+        position: absolute;
+        bottom: 10%;
+        left: 10%;
+        margin-bottom: -5px;
+      }
+
+      .fa {
+        top: 150px;
+        font-size: 15px;
+        margin-top: 10px;
+        padding-top: 8px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        text-decoration: none;
+        margin-right: 20px;
+
+      }
+      
+      /* Add a hover effect if you want */
+      .fa:hover {
+        opacity: 0.7;
+      }
+      
+      /* Set a specific color for each brand */
+      
+      /* Facebook */
+      .fa-facebook {
+        background: #3B5998;
+        color: white;
+  
+      }
+      
+      /* Twitter */
+      .fa-twitter {
+        background: #55ACEE;
+        color: white;
+      }
+
+      .fa-linkedin {
+        background: #007bb5;
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      .fa-github{
+        font-size: 36px;
+        background: #007bb5;
+        color: white;
+      }     
+
+      .image {
+        display:block; 
+        width:100%; 
+        height:100%;
+      }
+
+      .card-body {
+        text-align: left;
+        color: black;
+        background-color: white;
+      }
+
+      .card-img-top {
+        margin-top: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        height: 50%;
+        border-radius: 50%;
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+
+      }
+
+      .section-title {
+        padding: 20px;
+        color: #000066 ;
+        background-image: gray;
+        font-style: oblique;
+        font-weight: bold;
+      }
+
+      .title {
+        background: white;
+        color:  #000066;
+        font-style: oblique;
+        padding-top: 30px;
+        padding-bottom:20px;
+      }
+
+      .title h4{
+        font-weight: bold;
+      }
+
+      .gray {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        color:  #000066;
+        font-style: oblique;
+      }
+
+      .card-text {
+        font-size:12px;
+        margin-top: -5px;
+        margin-bottom: -8px;
+      }
+
+      .body {
+        font-size:12px;
+        color: black;
+        padding-top:20px;
+        padding-bottom:20px;
+      }
+
+      .card-title{
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .body p{
+        text-align: left;
+        margin-left: 100px;
+        margin-right: 100px;
+      }
+
+
+      .box-title{
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .box-text{
+        text-align: left;
+        font-size: 12px;
+      }
+
+      a {
+        padding-bottom: 30px;
+      }
+
+      .card-body {
+        display: flex;
+        flex-direction: column;
+      }
+      .card-link {
+         margin-top: auto;
+      }
+
+
+      .card{
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 10px; /* 5px rounded corners */
+        min-height: 350px;
+       }
+    </style>
+
+<div class="split left">
+        <div class="top">
+          <img src="./static/images/Avatar/avatar2.jpg" alt="Avatar woman">
+          <h4>Khanh Nguyen</h4>
+          <p>Hi there</p>
+        </div>
+        <!-- Add icon library -->
+        <div class="bottom">
+
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+          <!-- Add font awesome icons -->
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-linkedin"></a>
+          <a href="#" class="fa fa-github"></a>
+
+        </div>
+
+      </div>
+
+<div class="split right">
+
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+    <li data-target="#demo" data-slide-to="3"></li>
+
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./static/images/Banner/new1.png" alt="Los Angeles">
+    </div>
+    <div class="carousel-item">
+      <img src="./static/images/Banner/new2.png" alt="Chicago">
+    </div>
+    <div class="carousel-item">
+      <img src="./static/images/Banner/new3.png" alt="New York">
+    </div>
+    <div class="carousel-item">
+      <img src="./static/images/Banner/new.png" alt="A">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+  <div class="title">
+    <h4 class='text'>WORKING EXPERIENCES</h4> 
+  <div class="body">
+    <h6 class="card-title">CoderSchool: 2019-2020</h6>
+    <h6 class="card-title">Data Scientist / Machine learning engineer.</h6>
+    <p class="card-text"><i class="fa fa-star"></i>Researching and applying latest Machine Learning algorithms from Deep Learning, CNN, RNN... to find the best working models for difference problems.</p>
+    <p class="card-text"><i class="fa fa-star"></i>Doing all type of Machine Learning projects from image classification, natural language processing, speech recognition by building models based on well know libraries and models such as SKlearn, Tensorflow, Deep Learning, CNN, RNN...</p>
+    <p class="card-text"><i class="fa fa-star"></i>Building an end-to-end projetcs, from  gathering and cleaning data to test out Machine Learning models and build app to deploy the Machine Learning projects.</p>
+    <p class="card-text"><i class="fa fa-star"></i>Finding insights by gathering data and analyzing them with Python and Matplotlib, Seaborn, Pandas, using Google Data Studio or other visual tools for visualization.</p>
+    </div>
+  </div>
+
+  <div class="gray">
+  <div class="body">
+      <h6 class="card-title">PMAX: 2018 - 2019</h6>
+      <h6 class="card-title">Project-management lead</h6>
+      <p class="card-text"><i class="fa fa-star"></i>Daily making decisions by analyzing data to find insights in client's projects, so that we can keep track of the performance and solve problems immediately if any.</p>
+      <p class="card-text"><i class="fa fa-star"></i>Planning, doing proposal and presenting strategies proposal as well as reporting to CEO and managers level at client's team all in English.</p>
+      <p class="card-text"><i class="fa fa-star"></i>Daily negotiating, communicating with internal and external stake-holders to keep projects on track and make sure the whole team meet KPI with client.</p>
+      <p class="card-text"><i class="fa fa-star"></i>Daily planning to allocate team resource, catch-up to guide team member to solve complicated problem and hold problem-solving meetings with internal team. </p>
+      <p class="card-text"><i class="fa fa-star"></i>Leading and mentoring team members to build up a strong team. </p>
+  </div>
+</div>
+
+  <div class="title">
+    <div class="body">
+        <h6 class="card-title">Barcamp Saigon: 2012-2019</h6>
+        <h6 class="card-title">Organizer</h6>
+        <p class="card-text"><i class="fa fa-star"></i>Barcamp is one of the largest tech event happened in Vietnam aims at connecting people and sharing ideas such at TedEx platform. We created BarCamp Saigon to serve the community, create the environment for people to get connected</p>
+        <p class="card-text"><i class="fa fa-star"></i>Working with multi-national team members, deciding the strategies and which direction that the event should head toward.</p>
+        <p class="card-text"><i class="fa fa-star"></i>Solving complex problems and learn to be a good team member, to support each others and make the event work.</p>
+        <p class="card-text"><i class="fa fa-star"></i>Being a Barcamp speakers and ambasador to connect with as many proffesion communities as possible.</p>
+  </div>
+    </div>
+
+   
+  <div class="container-fluid">
+    <h4 class="section-title">MY PROJECTS</h4>
+     <div class="row">
+
+      <div class="col-xs-10 col-sm-4 col-md-3">
+        <div class="card text-left">
+            <div class="card-body">
+            <i class="fa fa-hand-spock-o" style="font-size: 40px; display: block; height: 100%; width: 100%; margin: auto; padding-bottom:15px"></i>
+            <h6 class="box-title">Hand gestures detection</h6>
+            <p class="box-text">This is an image classifcation problem. I used VCG-16 based model to train this dataset. And received around 99% val-accuracy. </p>
+            <a href="https://github.com/baokhanh92/Hand-gesture-controlling" target='blank' style="margin: 0 auto; display:block; text-align: center">Learn more</a>
+        </div>
+      </div>
+    </div>
+ 
+
+
+    <div class="col-xs-10 col-sm-4 col-md-3">
+      <div class="card text-left">
+        <div class="card-body">
+            <i class="fa fa-hand-spock-o" style="font-size: 40px; display: block; height: 100%; width: 100%; margin: auto; padding-bottom:15px"></i>
+            <h6 class="box-title">Speech recognition</h6>
+            <p class="box-text">A set of speech command 1 second long, with only one word command such as 'on, off....'. I tested out 4 models for this problems. Melspectrogram + LSTM, LSTM, Shallow Neuron Network, CNN. And result is that the CNN model predicts 85% val-accuracy.  </p>
+            <a href="https://github.com/baokhanh92/Voice_detection_API_controlling" target='blank' style="margin: 0 auto; display:block; text-align: center">Learn more</a>
+      </div>
+      </div>
+    </div>
+
+    <div class="col-xs-10 col-sm-4 col-md-3">
+        <div class="card text-left">
+            <div class="card-body">
+            <i class="fa fa-hand-spock-o" style="font-size: 40px; display: block; height: 100%; width: 100%; margin: auto; padding-bottom:15px"></i>
+            <h6 class="box-title">OCR Vietnamese</h6>
+            <p class="box-text">In this Cinnamon Challenge, I have a dataset of handwritten Vietnamese address. I approached this problem by using RCNN + CTC layers for the model to extract features and learn sequence sentences.</p>
+            <a href="https://github.com/baokhanh92/OCR-Vietnamese-Cinnamon-Challenge" target='blank' style="margin: 0 auto; display:block; text-align: center">Learn more</a>
+         </div>
+      </div>
+    </div>
+   
+  
+    <div class="col-xs-10 col-sm-4 col-md-3">
+        <div class="card text-left">
+            <div class="card-body">
+            <i class="fa fa-hand-spock-o" style="font-size: 40px; display: block; height: 100%; width: 100%; margin: auto; padding-bottom:15px"></i>
+            <h6 class="box-title">Fruit Detection App</h6>
+            <p class="box-text">This is a 3 classes classification problems. This is a complete flask app that used my Machine Learning to predict the type of fruit. </p>
+            <a href="https://github.com/baokhanh92/ML_Fruits-detection-flask-app" target='blank' style="margin: 0 auto; display:block; text-align: center">Learn more</a>
+         </div>
+      </div>
+    </div>
+
+    <div class="col-xs-10 col-sm-4 col-md-3">
+      <div class="card text-left">
+          <div class="card-body">
+          <i class="fa fa-hand-spock-o" style="font-size: 40px; display: block; height: 100%; width: 100%; margin: auto; padding-bottom:15px"></i>
+          <h6 class="box-title">IMDB Reviews</h6>
+          <p class="box-text">This is a natural language processing problem. For this kind of problem, I used Embedding layer together with Bidirectional LSTM layers to predict the outcome.</p>
+          <a href="https://github.com/baokhanh92/LSTM-IMDB-reviews" target='blank' style="margin: 0 auto; display:block; text-align: center">Learn more</a>
+       </div>
+    </div>
+  </div>
+
+  <div class="col-xs-10 col-sm-4 col-md-3">
+    <div class="card text-left">
+        <div class="card-body">
+        <i class="fa fa-hand-spock-o" style="font-size: 40px; display: block; height: 100%; width: 100%; margin: auto; padding-bottom:15px"></i>
+        <h6 class="box-title">Unsupervised Learning</h6>
+        <p class="box-text">Using different problems, from sale dataset to a picture. I applied well-known unsupervised learning method such as Hierarchical clustering, K-means and PCA for reducing dimesion.</p>
+        <a href="https://github.com/baokhanh92/Unsupervised-learning" target='blank' style="margin: 0 auto; display:block; text-align: center">Learn more</a>
+     </div>
+  </div>
+</div>    
+
+  <div class="col-xs-10 col-sm-4 col-md-3">
+    <div class="card text-left">
+        <div class="card-body">
+        <i class="fa fa-hand-spock-o" style="font-size: 40px; display: block; height: 100%; width: 100%; margin: auto; padding-bottom:15px"></i>
+        <h6 class="box-title">Crawling Website</h6>
+        <p class="box-text">I crawling Tiki website and saving the data in the PostSQL to rebuild exactly the same website.</p>
+        <a href="https://github.com/baokhanh92/Tiki-SQL-crawling-data-and-build-Tiki-flask-app" target='blank' style="margin: 0 auto; display:block; text-align: center">Learn more</a>
+    </div>
+  </div>
+</div>  
+      
+  <div class="col-xs-10 col-sm-4 col-md-3">
+    <div class="card text-left">
+        <div class="card-body">
+        <i class="fa fa-hand-spock-o" style="font-size: 40px; display: block; height: 100%; width: 100%; margin: auto; padding-bottom:15px"></i>
+        <h6 class="box-title">NBA Data Analysis</h6>
+        <p class="box-text">Using Kaggle dataset about NBA from 1950-2007. I dived through the data and using Pandas, Matplotlib, Seaborn and Google Data Studio to make a report to show my findings.</p>
+        <a href="https://github.com/baokhanh92/NBA-Detail-data-analysis" target='blank' style="margin: 0 auto; display:block; text-align: center">Learn more</a>
+    </div>
+  </div>
+</div>  
+           
+  
+</div>
+{% endblock %}
